@@ -8,10 +8,12 @@ import time
 
 app = Flask(__name__)
 
+#add your connection
 # MongoDB connection string (replace with your connection string)
 # CONNECTION_STRING = "mongodb+srv://test:test@cluster0.glcwxo4.mongodb.net/napa?retryWrites=true&w=majority&appName=Cluster0"
 CONNECTION_STRING = "mongodb://localhost:27017/"
 # Create the MongoDB client and connect to the 'scp' database once at app startup
+
 client = MongoClient(CONNECTION_STRING)
 db = client['scp']
 
