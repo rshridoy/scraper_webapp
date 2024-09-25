@@ -15,6 +15,7 @@ def scrape_paragraphs(url):
             soup = BeautifulSoup(response.content, 'html.parser')
             paragraphs = soup.find_all('p')
             paragraph_texts = [clean_and_normalize_text(p.get_text().strip()) for p in paragraphs if p.get_text().strip()]
+            time.sleep(5)
             return " ".join(paragraph_texts) if paragraph_texts else None
         else:
             print(f"Failed to retrieve {url}, Status: {response.status_code}")

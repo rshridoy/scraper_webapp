@@ -1,8 +1,10 @@
 from google.cloud import storage
 import os
-
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'path/to/your/service-account-file.json'
-bucket_name = 'your_bucket_name'
+# Set up Google Application Credentials for authentication
+current_dir = os.path.dirname(os.path.realpath(__file__))
+service_account_path = os.path.join(current_dir, 'cred', 'service_account.json')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = service_account_path
+bucket_name = 'scp_bucket'
 
 def upload_to_gcp(file):
     storage_client = storage.Client()
