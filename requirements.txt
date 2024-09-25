@@ -1,0 +1,5 @@
+flask
+pymongo
+bs4
+requests
+pypdf2
